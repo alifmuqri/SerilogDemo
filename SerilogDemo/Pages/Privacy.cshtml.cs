@@ -14,6 +14,7 @@ namespace SerilogDemo.Pages
 
         public void OnGet()
         {
+            _logger.LogInformation("You requested the privacy page");
         }
     }
 

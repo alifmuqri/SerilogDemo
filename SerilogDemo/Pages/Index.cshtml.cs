@@ -15,6 +15,15 @@ namespace SerilogDemo.Pages
         public void OnGet()
         {
             _logger.LogInformation("You requested the index page");
+
+            try
+            {
+                throw new Exception("This is our demo exception");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "We caught this exception in the index Get call.");
+            }
         }
     }
 }

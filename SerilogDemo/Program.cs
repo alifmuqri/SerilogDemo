@@ -3,18 +3,21 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
-
-var app = builder.Build();
-
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
 
+// Add Serilog to the logging pipeline
+builder.Host.UseSerilog();
+
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(configuration)
     .CreateLogger();
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+
+var app = builder.Build();
 
 try
 {

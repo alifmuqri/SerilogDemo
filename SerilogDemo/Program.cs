@@ -45,7 +45,7 @@ try
 }
 catch (Exception ex)
 {
-    Log.Fatal(ex, "The application failed to start correctly.");
+    Log.Error(ex, "The application failed to start correctly.");
 }
 finally
 {

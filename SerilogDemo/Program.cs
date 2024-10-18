@@ -33,6 +33,8 @@ try
     app.UseHttpsRedirection();
     app.UseStaticFiles();
 
+    app.UseSerilogRequestLogging();
+
     app.UseRouting();
 
     app.UseAuthorization();
